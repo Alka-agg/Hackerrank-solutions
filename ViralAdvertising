@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class ViralAdvertising {
+
+    static int viralAdvertising(int n) {
+        // Complete this function
+        int m=2;
+        int count=2;
+        if(n==0)
+            count=0;
+        while(n>1)
+        {
+          m=(m*3)/2;
+            count=count+m;
+            n--;
+        }
+        
+        
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int result = viralAdvertising(n);
+        System.out.println(result);
+        in.close();
+    }
+}
