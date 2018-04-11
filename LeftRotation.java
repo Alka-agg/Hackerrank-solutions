@@ -1,0 +1,39 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class LeftRotation {
+
+    private static final Scanner scan = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        String[] nd = scan.nextLine().split(" ");
+
+        int n = Integer.parseInt(nd[0].trim());
+
+        int d = Integer.parseInt(nd[1].trim());
+
+        int[] a = new int[n];
+
+        String[] aItems = scan.nextLine().split(" ");
+
+        for (int aItr = 0; aItr < n; aItr++) {
+            int aItem = Integer.parseInt(aItems[aItr].trim());
+            a[aItr] = aItem;
+        }
+        int[] b = new int[n];
+        int p;
+        for(int i=0;i<n;i++)
+        {
+            p = (i+d)%n;
+            b[i] = a[p];
+        }
+        for(int i=0;i<n;i++)
+        {
+      System.out.print(b[i]);
+            System.out.print(" ");
+        }
+    }
+}
